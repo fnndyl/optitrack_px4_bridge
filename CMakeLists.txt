@@ -10,14 +10,20 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(px4_msgs REQUIRED)
+find_package(optitrack_multiplexer_ros2_msgs REQUIRED)
 
-add_executable(optitrack_odometry_publisher src/optitrack_odometry_publisher.cpp)
-target_include_directories(optitrack_odometry_publisher PUBLIC
+add_executable(optitrack_px4_bridge src/optitrack_px4_bridge.cpp)
+ament_target_dependencies(optitrack_px4_bridge rclcpp px4_msgs optitrack_multiplexer_ros2_msgs)
+
+target_include_directories(optitrack_px4_bridge PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
-target_compile_features(optitrack_odometry_publisher PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+target_compile_features(optitrack_px4_bridge PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
-install(TARGETS optitrack_odometry_publisher
+
+install(TARGETS optitrack_px4_bridge
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
