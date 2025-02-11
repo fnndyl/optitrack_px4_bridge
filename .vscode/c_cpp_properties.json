@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/dylanfanner/ROS2_workspaces/ws_optitrack/install/px4_msgs/include/**",
+        "/home/dylanfanner/ROS2_workspaces/ws_optitrack/install/optitrack_multiplexer_ros2_msgs/include/**",
+        "/home/dylanfanner/ROS2_workspaces/ws_optitrack/install/optitrack_wrapper_ros2_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/dylanfanner/ROS2_workspaces/ws_optitrack/src/optitrack_packages_ros2/optitrack_multiplexer_ros2/include/**",
+        "/home/dylanfanner/ROS2_workspaces/ws_optitrack/src/optitrack_packages_ros2/optitrack_wrapper_ros2/include/**",
+        "/home/dylanfanner/ROS2_workspaces/ws_optitrack/src/optitrack_px4_bridge/include/**",
+        "include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
