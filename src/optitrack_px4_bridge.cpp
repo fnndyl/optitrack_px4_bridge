@@ -17,10 +17,10 @@ public:
   : Node("odometry_publisher")
   {
       mocap_subscription_ = this->create_subscription<optitrack_multiplexer_ros2_msgs::msg::RigidBodyStamped>(
-        "/optitrack_multiplexer_node/rigid_body/JohnMocap", 10, std::bind(&OdometryPublisher::mocap_callback, this, _1));
+        "/optitrack_multiplexer_node/rigid_body/X500", 10, std::bind(&OdometryPublisher::mocap_callback, this, _1));
 
       vehicle_odometry_publisher_ = this->create_publisher<px4_msgs::msg::VehicleOdometry>(
-        "/fmu/out/vehicle_visual_odometry", 10);
+        "/fmu/in/vehicle_visual_odometry", 10);
   }
 
 private:
